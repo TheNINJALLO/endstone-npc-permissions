@@ -20,8 +20,9 @@
 </p>
 
 <p align="center">
-  <a href="#overview">Overview</a> &bull;
-  <a href="#compatibility">Compatibility</a> &bull;
+  <a href="#what-it-does">What it does</a> &bull;
+  <a href="#how-to-use">How to use</a> &bull;
+  <a href="#commands-and-permissions">Commands</a> &bull;
   <a href="#install">Install</a> &bull;
   <a href="https://github.com/TheNINJALLO/endstone-npc-permissions/releases">Releases</a>
 </p>
@@ -30,11 +31,23 @@
 
 Allow non-operator creative players to configure NPCs. This release is aligned with Endstone 0.11.8 and Minecraft Bedrock Dedicated Server 1.26.40, and is distributed as a Python wheel for direct installation in an Endstone server.
 
-## Capabilities
+## What it does
 
-- NPC configuration access without full operator privileges
-- Permission-driven creative-player workflows
-- Narrow authorization surface for safer delegation
+- Allows selected non-operator creative players to configure Bedrock NPCs.
+- Uses a narrow permission instead of granting full operator privileges.
+- Provides explicit grant, revoke, and list operations for delegated NPC editors.
+
+## How to use
+
+1. As an operator, run `/npc grant <player>` for each trusted creative-mode NPC editor.
+2. Have the player enter creative mode and interact with an NPC to verify editor access.
+3. Review delegated users with `/npc list` and remove access with `/npc revoke <player>`.
+
+## Commands and permissions
+
+| Command / usage | What it does | Access |
+|---|---|---|
+| `/npc grant <player: str>`<br>`/npc revoke <player: str>`<br>`/npc list` | NPC Permissions management | `npcperm.admin` |
 
 ## Compatibility
 
